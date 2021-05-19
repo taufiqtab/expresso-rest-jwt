@@ -16,7 +16,7 @@ var connection = mysql.createConnection({
 
 
 app.get('/', (req, res) => {
-  res.send('Assalamualaikum!')
+  res.send('Assalamualaikum Bunda!')
   second(10);
 })
 
