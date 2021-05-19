@@ -1,6 +1,7 @@
 const e = require('express')
 const express = require('express')
 var mysql = require('mysql')
+const second = require('./second.js');
 const app = express()
 const port = 3000
 
@@ -15,7 +16,8 @@ var connection = mysql.createConnection({
 
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send('Assalamualaikum!')
+  second(10);
 })
 
 app.get('/coffee', (req, res) => {
