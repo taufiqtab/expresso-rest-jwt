@@ -51,7 +51,7 @@ app.get('/coffeecount', (req, res) => {
 
 app.get('/auth', (req, res) => {
   let privateKey = fs.readFileSync('./private.pem', 'utf8');
-  let token = jwt.sign({ "body": "stuff" }, privateKey, { algorithm: 'HS256', expiresIn: '1d'});
+  let token = jwt.sign({ "body": "stuff" }, privateKey, { algorithm: 'HS256', expiresIn: '30d'});
   res.send(token);
 })
 
