@@ -1,18 +1,19 @@
 const e = require('express')
 const express = require('express')
+require('dotenv').config()
 var mysql = require('mysql')
 const second = require('./second.js');
 const jwt = require('jsonwebtoken');
 const fs = require('fs');
 const app = express()
-const port = 3000
+const port = process.env.PORT;
 
 var connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'expresso',
-    multipleStatements : true
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    multipleStatements : process.env.DB_MULTIPLE
   })
 
 app.get('/', (req, res) => {
